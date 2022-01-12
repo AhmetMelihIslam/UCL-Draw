@@ -12,420 +12,156 @@ namespace UCL_1
 {
     public partial class Form1 : Form
     {
+        ListBox[] teamlist = null;
+        Random rnd = null;
+        int randomTeam;
+        int teamNumber;
+
         public Form1()
-        {
+        {            
             InitializeComponent();
+            teamlist = new ListBox[32];
+            teamlist[0] = listBox1;
+            teamlist[1] = listBox2;
+            teamlist[2] = listBox3;
+            teamlist[3] = listBox4;
+            teamlist[4] = listBox5;
+            teamlist[5] = listBox6;
+            teamlist[6] = listBox7;
+            teamlist[7] = listBox8;
+            teamlist[8] = listBox9;
+            teamlist[9] = listBox10;
+            teamlist[10] = listBox11;
+            teamlist[11] = listBox12;
+            teamlist[12] = listBox13;
+            teamlist[13] = listBox14;
+            teamlist[14] = listBox15;
+            teamlist[15] = listBox16;
+            teamlist[16] = listBox17;
+            teamlist[17] = listBox18;
+            teamlist[18] = listBox19;
+            teamlist[19] = listBox20;
+            teamlist[20] = listBox21;
+            teamlist[21] = listBox22;
+            teamlist[22] = listBox23;
+            teamlist[23] = listBox24;
+            teamlist[24] = listBox25;
+            teamlist[25] = listBox26;
+            teamlist[26] = listBox27;
+            teamlist[27] = listBox28;
+            teamlist[28] = listBox29;
+            teamlist[29] = listBox30;
+            teamlist[30] = listBox31;
+            teamlist[31] = listBox32;
+            rnd = new Random();
+            randomTeam = 0;
+            teamNumber = 0;
         }
-    
-//*************************************************************
 
-        // First group stage draw
-
-        private void button1_Click_1(object sender, EventArgs e)
+        void stageGroupDraw(ListBox list, int firstteamno, int increment = 4)
         {
-            Random rnd = new Random();
-            int teamNumber = list_1.Items.Count;
-            for (int i = 1; i <= teamNumber; i++)
+            teamNumber = list.Items.Count;
+            int teamlistno = firstteamno;
+            for (int i = 0; i < teamNumber; i++)
             {
-                int randomTeam = rnd.Next(0, list_1.Items.Count);
-            
+                randomTeam = rnd.Next(0, list.Items.Count);
 
-                if(i < 2)
-                {
-                    listBox1.Items.Add(list_1.Items[randomTeam]);
-                    list_1.Items.RemoveAt(randomTeam);
-                }
-
-                else if(i < 3)
-                {
-                    listBox5.Items.Add(list_1.Items[randomTeam]);
-                    list_1.Items.RemoveAt(randomTeam);
-                }
-
+                teamlist[teamlistno].Items.Add(list.Items[randomTeam]);
+                list.Items.RemoveAt(randomTeam);
+                teamlistno += increment;
                 
-                else if(i < 4)
-                {
-                    listBox9.Items.Add(list_1.Items[randomTeam]);
-                    list_1.Items.RemoveAt(randomTeam);
-                }
-
-                
-                else if(i < 5)
-                {
-                    listBox13.Items.Add(list_1.Items[randomTeam]);
-                    list_1.Items.RemoveAt(randomTeam);
-                }
-
-                
-                else if(i < 6)
-                {
-                    listBox17.Items.Add(list_1.Items[randomTeam]);
-                    list_1.Items.RemoveAt(randomTeam);
-                }
-
-                
-                else if(i < 7)
-                {
-                    listBox21.Items.Add(list_1.Items[randomTeam]);
-                    list_1.Items.RemoveAt(randomTeam);
-                }
-                
-                
-                else if(i < 8)
-                {
-                    listBox25.Items.Add(list_1.Items[randomTeam]);
-                    list_1.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 9)
-                {
-                    listBox29.Items.Add(list_1.Items[randomTeam]);
-                    list_1.Items.RemoveAt(randomTeam);
-                }
-
-
-
+                if (teamlistno > teamlist.Length - 1) teamlistno = firstteamno;
             }
 
+        }
+
+        private void firstGroupStageDraw(object sender, EventArgs e)
+        {
+            // first: listBox1
+            stageGroupDraw(list_1, 0);
         }
         
-//*************************************************************
-
-        // Second group stage draw
-
-        private void Sec_group_Click(object sender, EventArgs e)
+        private void secondGroupStageDraw(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            int teamNumber = list_2.Items.Count;
-            for (int i = 1; i <= teamNumber; i++)
+            // first: listBox2
+            stageGroupDraw(list_2, 1);
+        }
+
+        private void thirdGroupStageDraw(object sender, EventArgs e)
+        {
+            // first: listBox3
+            stageGroupDraw(list_3, 2);
+        }
+
+        private void fourthGroupStageDraw(object sender, EventArgs e)
+        {
+            // first: listBox4
+            stageGroupDraw(list_4, 3);
+        }
+
+        private void allTeamDelete(object sender, EventArgs e)
+        {
+            for(int i = 0; i < teamlist.Length; i++)
             {
-                int randomTeam = rnd.Next(0, list_2.Items.Count);
-
-
-                if (i < 2)
-                {
-                    listBox2.Items.Add(list_2.Items[randomTeam]);
-                    list_2.Items.RemoveAt(randomTeam);
-                }
-
-                else if (i < 3)
-                {
-                    listBox6.Items.Add(list_2.Items[randomTeam]);
-                    list_2.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 4)
-                {
-                    listBox10.Items.Add(list_2.Items[randomTeam]);
-                    list_2.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 5)
-                {
-                    listBox14.Items.Add(list_2.Items[randomTeam]);
-                    list_2.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 6)
-                {
-                    listBox18.Items.Add(list_2.Items[randomTeam]);
-                    list_2.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 7)
-                {
-                    listBox22.Items.Add(list_2.Items[randomTeam]);
-                    list_2.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 8)
-                {
-                    listBox26.Items.Add(list_2.Items[randomTeam]);
-                    list_2.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 9)
-                {
-                    listBox30.Items.Add(list_2.Items[randomTeam]);
-                    list_2.Items.RemoveAt(randomTeam);
-                }
-
-
-
+                teamlist[i].Items.Clear();
             }
         }
 
-//*************************************************************
-
-        // Third group stage draw
-
-        private void Third_group_Click(object sender, EventArgs e)
+        private void list1AddText(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            int teamNumber = list_3.Items.Count;
-            for (int i = 1; i <= teamNumber; i++)
+            listAddText(list_1, textBox1);
+        }
+
+        private void list2AddText(object sender, EventArgs e)
+        {
+            listAddText(list_2, textBox2);
+        }
+
+        private void list3AddText(object sender, EventArgs e)
+        {
+            listAddText(list_3, textBox3);
+        }
+
+        private void list4AddText(object sender, EventArgs e)
+        {
+            listAddText(list_4, textBox4);
+        }
+
+        void listAddText(ListBox list, TextBox textBox)
+        {
+            if (textBox.Text != "")
             {
-                int randomTeam = rnd.Next(0, list_3.Items.Count);
-
-
-                if (i < 2)
-                {
-                    listBox3.Items.Add(list_3.Items[randomTeam]);
-                    list_3.Items.RemoveAt(randomTeam);
-                }
-
-                else if (i < 3)
-                {
-                    listBox7.Items.Add(list_3.Items[randomTeam]);
-                    list_3.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 4)
-                {
-                    listBox11.Items.Add(list_3.Items[randomTeam]);
-                    list_3.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 5)
-                {
-                    listBox15.Items.Add(list_3.Items[randomTeam]);
-                    list_3.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 6)
-                {
-                    listBox19.Items.Add(list_3.Items[randomTeam]);
-                    list_3.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 7)
-                {
-                    listBox23.Items.Add(list_3.Items[randomTeam]);
-                    list_3.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 8)
-                {
-                    listBox27.Items.Add(list_3.Items[randomTeam]);
-                    list_3.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 9)
-                {
-                    listBox31.Items.Add(list_3.Items[randomTeam]);
-                    list_3.Items.RemoveAt(randomTeam);
-                }
-
-
-
+                list.Items.Add(textBox.Text);
             }
         }
 
-//*************************************************************
-
-        // Fourth group stage draw
-
-        private void Fourth_group_Click(object sender, EventArgs e)
+        private void list1TeamDelete(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            int teamNumber = list_4.Items.Count;
-            for (int i = 1; i <= teamNumber; i++)
+            teamDelete(list_1);
+        }
+
+        private void list2TeamDelete(object sender, EventArgs e)
+        {
+            teamDelete(list_2);
+        }
+
+        private void list3TeamDelete(object sender, EventArgs e)
+        {
+            teamDelete(list_3);
+        }
+
+        private void list4TeamDelete(object sender, EventArgs e)
+        {
+            teamDelete(list_4);
+        }
+        
+        void teamDelete(ListBox list)
+        {
+            for (int i = list.SelectedItems.Count - 1; i >= 0; i--)
             {
-                int randomTeam = rnd.Next(0, list_4.Items.Count);
-
-
-                if (i < 2)
-                {
-                    listBox4.Items.Add(list_4.Items[randomTeam]);
-                    list_4.Items.RemoveAt(randomTeam);
-                }
-
-                else if (i < 3)
-                {
-                    listBox8.Items.Add(list_4.Items[randomTeam]);
-                    list_4.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 4)
-                {
-                    listBox12.Items.Add(list_4.Items[randomTeam]);
-                    list_4.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 5)
-                {
-                    listBox16.Items.Add(list_4.Items[randomTeam]);
-                    list_4.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 6)
-                {
-                    listBox20.Items.Add(list_4.Items[randomTeam]);
-                    list_4.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 7)
-                {
-                    listBox24.Items.Add(list_4.Items[randomTeam]);
-                    list_4.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 8)
-                {
-                    listBox28.Items.Add(list_4.Items[randomTeam]);
-                    list_4.Items.RemoveAt(randomTeam);
-                }
-
-
-                else if (i < 9)
-                {
-                    listBox32.Items.Add(list_4.Items[randomTeam]);
-                    list_4.Items.RemoveAt(randomTeam);
-                }
-
-
-
+                list.Items.Remove(list.SelectedItems[i]);
             }
         }
-
-//*************************************************************
-
-            // Clear All Group
-
-        private void button1_Click_3(object sender, EventArgs e)
-        {
-            
-            listBox1.Items.Clear();
-            listBox2.Items.Clear();
-            listBox3.Items.Clear();
-            listBox4.Items.Clear();
-            listBox5.Items.Clear();
-            listBox6.Items.Clear();
-            listBox7.Items.Clear();
-            listBox8.Items.Clear();
-            listBox9.Items.Clear();
-            listBox10.Items.Clear();
-            listBox11.Items.Clear();
-            listBox12.Items.Clear();
-            listBox13.Items.Clear();
-            listBox14.Items.Clear();
-            listBox15.Items.Clear();
-            listBox16.Items.Clear();
-            listBox17.Items.Clear();
-            listBox18.Items.Clear();
-            listBox19.Items.Clear();
-            listBox20.Items.Clear();
-            listBox21.Items.Clear();
-            listBox22.Items.Clear();
-            listBox23.Items.Clear();
-            listBox24.Items.Clear();
-            listBox25.Items.Clear();
-            listBox26.Items.Clear();
-            listBox27.Items.Clear();
-            listBox28.Items.Clear();
-            listBox29.Items.Clear();
-            listBox30.Items.Clear();
-            listBox31.Items.Clear();
-            listBox32.Items.Clear();
-
-
-        }
-//*************************************************************
-
-    // Team add Button
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if(textBox1.Text != "")
-            {
-                list_1.Items.Add(textBox1.Text);
-            }
-            
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (textBox2.Text != "")
-            {
-                list_2.Items.Add(textBox2.Text);
-            }
-        }
-
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (textBox3.Text != "")
-            {
-                list_3.Items.Add(textBox3.Text);
-            }
-        }
-
-        private void button6_Click_1(object sender, EventArgs e)
-        {
-
-            if (textBox4.Text != "")
-            {
-                list_4.Items.Add(textBox4.Text);
-            }
-        }
-
-//*************************************************************
-
-
-            // Team delete button
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            for (int i = list_1.SelectedItems.Count - 1; i >= 0; i--)
-            {
-                list_1.Items.Remove(list_1.SelectedItems[i]);
-            }
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            for (int i = list_2.SelectedItems.Count - 1; i >= 0; i--)
-            {
-                list_2.Items.Remove(list_2.SelectedItems[i]);
-            }
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            for (int i = list_3.SelectedItems.Count - 1; i >= 0; i--)
-            {
-                list_3.Items.Remove(list_3.SelectedItems[i]);
-            }
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            for (int i = list_4.SelectedItems.Count - 1; i >= 0; i--)
-            {
-                list_4.Items.Remove(list_4.SelectedItems[i]);
-            }
-        }
-
-//*************************************************************
-
 
     }
 }

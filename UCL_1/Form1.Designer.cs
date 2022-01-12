@@ -386,7 +386,7 @@
             this.First_Team.TabIndex = 37;
             this.First_Team.Text = "First_Teams";
             this.First_Team.UseVisualStyleBackColor = true;
-            this.First_Team.Click += new System.EventHandler(this.button1_Click_1);
+            this.First_Team.Click += new System.EventHandler(this.firstGroupStageDraw);
             // 
             // Sec_group
             // 
@@ -396,7 +396,7 @@
             this.Sec_group.TabIndex = 38;
             this.Sec_group.Text = "Second_Teams";
             this.Sec_group.UseVisualStyleBackColor = true;
-            this.Sec_group.Click += new System.EventHandler(this.Sec_group_Click);
+            this.Sec_group.Click += new System.EventHandler(this.secondGroupStageDraw);
             // 
             // Third_group
             // 
@@ -406,7 +406,7 @@
             this.Third_group.TabIndex = 39;
             this.Third_group.Text = "Third_Teams";
             this.Third_group.UseVisualStyleBackColor = true;
-            this.Third_group.Click += new System.EventHandler(this.Third_group_Click);
+            this.Third_group.Click += new System.EventHandler(this.thirdGroupStageDraw);
             // 
             // Fourth_group
             // 
@@ -416,7 +416,7 @@
             this.Fourth_group.TabIndex = 40;
             this.Fourth_group.Text = "Fourt_Teams";
             this.Fourth_group.UseVisualStyleBackColor = true;
-            this.Fourth_group.Click += new System.EventHandler(this.Fourth_group_Click);
+            this.Fourth_group.Click += new System.EventHandler(this.fourthGroupStageDraw);
             // 
             // listBox25
             // 
@@ -471,7 +471,7 @@
             this.button1.TabIndex = 46;
             this.button1.Text = "All Group Delete";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_3);
+            this.button1.Click += new System.EventHandler(this.allTeamDelete);
             // 
             // textBox1
             // 
@@ -488,7 +488,7 @@
             this.button2.TabIndex = 48;
             this.button2.Text = "ADD";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.list1AddText);
             // 
             // button3
             // 
@@ -498,7 +498,7 @@
             this.button3.TabIndex = 49;
             this.button3.Text = "REMOVE";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.list1TeamDelete);
             // 
             // button4
             // 
@@ -508,7 +508,7 @@
             this.button4.TabIndex = 51;
             this.button4.Text = "ADD";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.list2AddText);
             // 
             // textBox2
             // 
@@ -525,7 +525,7 @@
             this.button5.TabIndex = 53;
             this.button5.Text = "ADD";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.list3AddText);
             // 
             // textBox3
             // 
@@ -542,7 +542,7 @@
             this.button6.TabIndex = 55;
             this.button6.Text = "ADD";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            this.button6.Click += new System.EventHandler(this.list4AddText);
             // 
             // textBox4
             // 
@@ -559,7 +559,7 @@
             this.button7.TabIndex = 56;
             this.button7.Text = "REMOVE";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button7.Click += new System.EventHandler(this.list2TeamDelete);
             // 
             // button8
             // 
@@ -569,7 +569,7 @@
             this.button8.TabIndex = 57;
             this.button8.Text = "REMOVE";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button8.Click += new System.EventHandler(this.list3TeamDelete);
             // 
             // button9
             // 
@@ -579,7 +579,7 @@
             this.button9.TabIndex = 58;
             this.button9.Text = "REMOVE";
             this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button9.Click += new System.EventHandler(this.list4TeamDelete);
             // 
             // Form1
             // 
